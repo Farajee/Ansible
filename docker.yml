@@ -1,0 +1,16 @@
+---
+- hosts: localpcs
+  become: yes
+  become_user: root
+  tasks:
+  - name: Download Docker file
+    get_url:
+      url: https://get.docker.com/
+      dest: /home/ansible/first/file.sh
+      mode: '0751'
+    tags: [docker]
+    
+  - name: Run Install Docker Script
+    command: sh /home/ansible/first/file.sh
+    tags: [docker]
+
