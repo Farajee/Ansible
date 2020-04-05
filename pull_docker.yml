@@ -1,0 +1,15 @@
+---
+- hosts: localpcs
+  become: yes
+  become_user: root
+  tasks:
+  - name: pull an image
+    docker_image:
+      name: "{{ item }}"
+      source: pull
+    loop:
+      - nginx:1.16 
+      - php:7.2
+      - ubuntu:trusty     
+        
+
