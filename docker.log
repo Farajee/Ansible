@@ -1,0 +1,277 @@
+2020-04-07 15:37:26,347 p=1705 u=ansible n=ansible | PLAY [localpcs] *******************************************************************************
+2020-04-07 15:37:26,370 p=1705 u=ansible n=ansible | TASK [Gathering Facts] ************************************************************************
+2020-04-07 15:37:26,393 p=1705 u=ansible n=ansible | fatal: [ansible4]: FAILED! => {"msg": "Invalid become method specified, could not find matching plugin: 'root'. Use `ansible-doc -t become -l` to list available plugins."}
+2020-04-07 15:37:26,396 p=1705 u=ansible n=ansible | PLAY RECAP ************************************************************************************
+2020-04-07 15:37:26,396 p=1705 u=ansible n=ansible | ansible4                   : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-04-07 15:37:48,794 p=1716 u=ansible n=ansible | PLAY [localpcs] *******************************************************************************
+2020-04-07 15:37:48,809 p=1716 u=ansible n=ansible | TASK [Gathering Facts] ************************************************************************
+2020-04-07 15:37:51,243 p=1716 u=ansible n=ansible | ok: [ansible4]
+2020-04-07 15:37:51,271 p=1716 u=ansible n=ansible | TASK [Copy Dockerfile to host node] ***********************************************************
+2020-04-07 15:37:51,442 p=1716 u=ansible n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-04-07 15:37:51,443 p=1716 u=ansible n=ansible | fatal: [ansible4]: FAILED! => {"changed": false, "msg": "Could not find or access '/home/ansible/gd/Dockerfile' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2020-04-07 15:37:51,447 p=1716 u=ansible n=ansible | PLAY RECAP ************************************************************************************
+2020-04-07 15:37:51,448 p=1716 u=ansible n=ansible | ansible4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-04-07 15:41:07,059 p=1772 u=ansible n=ansible | PLAY [localpcs] *******************************************************************************
+2020-04-07 15:41:07,076 p=1772 u=ansible n=ansible | TASK [Gathering Facts] ************************************************************************
+2020-04-07 15:41:09,277 p=1772 u=ansible n=ansible | ok: [ansible4]
+2020-04-07 15:41:09,301 p=1772 u=ansible n=ansible | TASK [Copy Dockerfile to host node] ***********************************************************
+2020-04-07 15:41:09,552 p=1772 u=ansible n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-04-07 15:41:09,553 p=1772 u=ansible n=ansible | failed: [ansible4] (item=Dockerfile) => {"ansible_loop_var": "item", "changed": false, "item": "Dockerfile", "msg": "Could not find or access '/home/ansible/gd/ \"Dockerfile\"' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2020-04-07 15:41:09,699 p=1772 u=ansible n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2020-04-07 15:41:09,700 p=1772 u=ansible n=ansible | failed: [ansible4] (item=index.html) => {"ansible_loop_var": "item", "changed": false, "item": "index.html", "msg": "Could not find or access '/home/ansible/gd/ \"index.html\"' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2020-04-07 15:41:09,705 p=1772 u=ansible n=ansible | PLAY RECAP ************************************************************************************
+2020-04-07 15:41:09,706 p=1772 u=ansible n=ansible | ansible4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-04-07 15:41:57,673 p=1805 u=ansible n=ansible | ERROR! the playbook: clear could not be found
+2020-04-07 15:42:06,321 p=1809 u=ansible n=ansible | PLAY [localpcs] *******************************************************************************
+2020-04-07 15:42:06,336 p=1809 u=ansible n=ansible | TASK [Gathering Facts] ************************************************************************
+2020-04-07 15:42:08,047 p=1809 u=ansible n=ansible | ok: [ansible4]
+2020-04-07 15:42:08,072 p=1809 u=ansible n=ansible | TASK [Copy Dockerfile to host node] ***********************************************************
+2020-04-07 15:42:09,603 p=1809 u=ansible n=ansible | changed: [ansible4] => (item=Dockerfile)
+2020-04-07 15:42:10,604 p=1809 u=ansible n=ansible | changed: [ansible4] => (item=index.html)
+2020-04-07 15:42:10,632 p=1809 u=ansible n=ansible | TASK [Build image with Dockerfile] ************************************************************
+2020-04-07 15:42:15,903 p=1809 u=ansible n=ansible | [WARNING]: The "build" state has been deprecated for a long time and will be removed in
+Ansible 2.11. Please use "present", which has the same meaning as "build".
+
+2020-04-07 15:42:15,903 p=1809 u=ansible n=ansible | [WARNING]: Please specify build.path instead of path. The path option has been renamed and
+will be removed in Ansible 2.12.
+
+2020-04-07 15:42:15,904 p=1809 u=ansible n=ansible | [WARNING]: The value of the "source" option was determined to be "build". Please set the
+"source" option explicitly. Autodetection will be removed in Ansible 2.12.
+
+2020-04-07 15:42:15,904 p=1809 u=ansible n=ansible | [DEPRECATION WARNING]: Param 'path' is deprecated. See the module docs for more information. 
+This feature will be removed in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-04-07 15:42:15,905 p=1809 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 15:42:15,933 p=1809 u=ansible n=ansible | TASK [Runnig the container] *******************************************************************
+2020-04-07 15:42:16,978 p=1809 u=ansible n=ansible | fatal: [ansible4]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (docker_container) module: path Supported parameters include: api_version, auto_remove, blkio_weight, ca_cert, cap_drop, capabilities, cleanup, client_cert, client_key, command, comparisons, cpu_period, cpu_quota, cpu_shares, cpuset_cpus, cpuset_mems, debug, detach, device_read_bps, device_read_iops, device_write_bps, device_write_iops, devices, dns_opts, dns_search_domains, dns_servers, docker_host, domainname, entrypoint, env, env_file, etc_hosts, exposed_ports, force_kill, groups, healthcheck, hostname, ignore_image, image, init, interactive, ipc_mode, keep_volumes, kernel_memory, kill_signal, labels, links, log_driver, log_options, mac_address, memory, memory_reservation, memory_swap, memory_swappiness, mounts, name, network_mode, networks, networks_cli_compatible, oom_killer, oom_score_adj, output_logs, paused, pid_mode, pids_limit, privileged, published_ports, pull, purge_networks, read_only, recreate, restart, restart_policy, restart_retries, runtime, security_opts, shm_size, ssl_version, state, stop_signal, stop_timeout, sysctls, timeout, tls, tls_hostname, tmpfs, trust_image_content, tty, ulimits, user, userns_mode, uts, validate_certs, volume_driver, volumes, volumes_from, working_dir"}
+2020-04-07 15:42:16,980 p=1809 u=ansible n=ansible | PLAY RECAP ************************************************************************************
+2020-04-07 15:42:16,981 p=1809 u=ansible n=ansible | ansible4                   : ok=3    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-04-07 15:52:24,825 p=1913 u=ansible n=ansible | PLAY [localpcs] *******************************************************************************
+2020-04-07 15:52:24,839 p=1913 u=ansible n=ansible | TASK [Gathering Facts] ************************************************************************
+2020-04-07 15:52:27,080 p=1913 u=ansible n=ansible | ok: [ansible4]
+2020-04-07 15:52:27,104 p=1913 u=ansible n=ansible | TASK [Copy Dockerfile to host node] ***********************************************************
+2020-04-07 15:52:28,482 p=1913 u=ansible n=ansible | ok: [ansible4] => (item=Dockerfile)
+2020-04-07 15:52:29,356 p=1913 u=ansible n=ansible | ok: [ansible4] => (item=index.html)
+2020-04-07 15:52:29,385 p=1913 u=ansible n=ansible | TASK [Build image with Dockerfile] ************************************************************
+2020-04-07 15:52:35,907 p=1913 u=ansible n=ansible | [WARNING]: The "build" state has been deprecated for a long time and will be removed in
+Ansible 2.11. Please use "present", which has the same meaning as "build".
+
+2020-04-07 15:52:35,907 p=1913 u=ansible n=ansible | [WARNING]: Please specify build.path instead of path. The path option has been renamed and
+will be removed in Ansible 2.12.
+
+2020-04-07 15:52:35,907 p=1913 u=ansible n=ansible | [WARNING]: The value of the "source" option was determined to be "build". Please set the
+"source" option explicitly. Autodetection will be removed in Ansible 2.12.
+
+2020-04-07 15:52:35,908 p=1913 u=ansible n=ansible | [DEPRECATION WARNING]: Param 'path' is deprecated. See the module docs for more information. 
+This feature will be removed in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-04-07 15:52:35,908 p=1913 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 15:52:35,931 p=1913 u=ansible n=ansible | TASK [Runnig the container] *******************************************************************
+2020-04-07 15:52:36,922 p=1913 u=ansible n=ansible | fatal: [ansible4]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (docker_container) module: path Supported parameters include: api_version, auto_remove, blkio_weight, ca_cert, cap_drop, capabilities, cleanup, client_cert, client_key, command, comparisons, cpu_period, cpu_quota, cpu_shares, cpuset_cpus, cpuset_mems, debug, detach, device_read_bps, device_read_iops, device_write_bps, device_write_iops, devices, dns_opts, dns_search_domains, dns_servers, docker_host, domainname, entrypoint, env, env_file, etc_hosts, exposed_ports, force_kill, groups, healthcheck, hostname, ignore_image, image, init, interactive, ipc_mode, keep_volumes, kernel_memory, kill_signal, labels, links, log_driver, log_options, mac_address, memory, memory_reservation, memory_swap, memory_swappiness, mounts, name, network_mode, networks, networks_cli_compatible, oom_killer, oom_score_adj, output_logs, paused, pid_mode, pids_limit, privileged, published_ports, pull, purge_networks, read_only, recreate, restart, restart_policy, restart_retries, runtime, security_opts, shm_size, ssl_version, state, stop_signal, stop_timeout, sysctls, timeout, tls, tls_hostname, tmpfs, trust_image_content, tty, ulimits, user, userns_mode, uts, validate_certs, volume_driver, volumes, volumes_from, working_dir"}
+2020-04-07 15:52:36,924 p=1913 u=ansible n=ansible | PLAY RECAP ************************************************************************************
+2020-04-07 15:52:36,925 p=1913 u=ansible n=ansible | ansible4                   : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-04-07 15:53:44,777 p=1983 u=ansible n=ansible | PLAY [localpcs] *******************************************************************************
+2020-04-07 15:53:44,792 p=1983 u=ansible n=ansible | TASK [Gathering Facts] ************************************************************************
+2020-04-07 15:53:46,868 p=1983 u=ansible n=ansible | ok: [ansible4]
+2020-04-07 15:53:46,891 p=1983 u=ansible n=ansible | TASK [Copy Dockerfile to host node] ***********************************************************
+2020-04-07 15:53:48,245 p=1983 u=ansible n=ansible | ok: [ansible4] => (item=Dockerfile)
+2020-04-07 15:53:49,132 p=1983 u=ansible n=ansible | ok: [ansible4] => (item=index.html)
+2020-04-07 15:53:49,157 p=1983 u=ansible n=ansible | TASK [Build image with Dockerfile] ************************************************************
+2020-04-07 15:53:55,897 p=1983 u=ansible n=ansible | [WARNING]: The "build" state has been deprecated for a long time and will be removed in
+Ansible 2.11. Please use "present", which has the same meaning as "build".
+
+2020-04-07 15:53:55,898 p=1983 u=ansible n=ansible | [WARNING]: Please specify build.path instead of path. The path option has been renamed and
+will be removed in Ansible 2.12.
+
+2020-04-07 15:53:55,898 p=1983 u=ansible n=ansible | [WARNING]: The value of the "source" option was determined to be "build". Please set the
+"source" option explicitly. Autodetection will be removed in Ansible 2.12.
+
+2020-04-07 15:53:55,898 p=1983 u=ansible n=ansible | [DEPRECATION WARNING]: Param 'path' is deprecated. See the module docs for more information. 
+This feature will be removed in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-04-07 15:53:55,899 p=1983 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 15:53:55,921 p=1983 u=ansible n=ansible | TASK [Runnig the container] *******************************************************************
+2020-04-07 15:53:56,914 p=1983 u=ansible n=ansible | fatal: [ansible4]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (docker_container) module: path Supported parameters include: api_version, auto_remove, blkio_weight, ca_cert, cap_drop, capabilities, cleanup, client_cert, client_key, command, comparisons, cpu_period, cpu_quota, cpu_shares, cpuset_cpus, cpuset_mems, debug, detach, device_read_bps, device_read_iops, device_write_bps, device_write_iops, devices, dns_opts, dns_search_domains, dns_servers, docker_host, domainname, entrypoint, env, env_file, etc_hosts, exposed_ports, force_kill, groups, healthcheck, hostname, ignore_image, image, init, interactive, ipc_mode, keep_volumes, kernel_memory, kill_signal, labels, links, log_driver, log_options, mac_address, memory, memory_reservation, memory_swap, memory_swappiness, mounts, name, network_mode, networks, networks_cli_compatible, oom_killer, oom_score_adj, output_logs, paused, pid_mode, pids_limit, privileged, published_ports, pull, purge_networks, read_only, recreate, restart, restart_policy, restart_retries, runtime, security_opts, shm_size, ssl_version, state, stop_signal, stop_timeout, sysctls, timeout, tls, tls_hostname, tmpfs, trust_image_content, tty, ulimits, user, userns_mode, uts, validate_certs, volume_driver, volumes, volumes_from, working_dir"}
+2020-04-07 15:53:56,917 p=1983 u=ansible n=ansible | PLAY RECAP ************************************************************************************
+2020-04-07 15:53:56,917 p=1983 u=ansible n=ansible | ansible4                   : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-04-07 15:54:31,403 p=2048 u=ansible n=ansible | PLAY [localpcs] *******************************************************************************
+2020-04-07 15:54:31,419 p=2048 u=ansible n=ansible | TASK [Gathering Facts] ************************************************************************
+2020-04-07 15:54:33,032 p=2048 u=ansible n=ansible | ok: [ansible4]
+2020-04-07 15:54:33,056 p=2048 u=ansible n=ansible | TASK [Copy Dockerfile to host node] ***********************************************************
+2020-04-07 15:54:34,394 p=2048 u=ansible n=ansible | ok: [ansible4] => (item=Dockerfile)
+2020-04-07 15:54:35,275 p=2048 u=ansible n=ansible | ok: [ansible4] => (item=index.html)
+2020-04-07 15:54:35,305 p=2048 u=ansible n=ansible | TASK [Build image with Dockerfile] ************************************************************
+2020-04-07 15:54:39,888 p=2048 u=ansible n=ansible | [WARNING]: The "build" state has been deprecated for a long time and will be removed in
+Ansible 2.11. Please use "present", which has the same meaning as "build".
+
+2020-04-07 15:54:39,889 p=2048 u=ansible n=ansible | [WARNING]: Please specify build.path instead of path. The path option has been renamed and
+will be removed in Ansible 2.12.
+
+2020-04-07 15:54:39,889 p=2048 u=ansible n=ansible | [WARNING]: The value of the "source" option was determined to be "build". Please set the
+"source" option explicitly. Autodetection will be removed in Ansible 2.12.
+
+2020-04-07 15:54:39,890 p=2048 u=ansible n=ansible | [DEPRECATION WARNING]: Param 'path' is deprecated. See the module docs for more information. 
+This feature will be removed in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-04-07 15:54:39,890 p=2048 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 15:54:39,915 p=2048 u=ansible n=ansible | TASK [Runnig the container] *******************************************************************
+2020-04-07 15:54:40,905 p=2048 u=ansible n=ansible | fatal: [ansible4]: FAILED! => {"changed": false, "msg": "missing required arguments: name"}
+2020-04-07 15:54:40,907 p=2048 u=ansible n=ansible | PLAY RECAP ************************************************************************************
+2020-04-07 15:54:40,907 p=2048 u=ansible n=ansible | ansible4                   : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2020-04-07 15:56:01,008 p=2110 u=ansible n=ansible | PLAY [localpcs] *******************************************************************************
+2020-04-07 15:56:01,022 p=2110 u=ansible n=ansible | TASK [Gathering Facts] ************************************************************************
+2020-04-07 15:56:03,075 p=2110 u=ansible n=ansible | ok: [ansible4]
+2020-04-07 15:56:03,102 p=2110 u=ansible n=ansible | TASK [Copy Dockerfile to host node] ***********************************************************
+2020-04-07 15:56:04,443 p=2110 u=ansible n=ansible | ok: [ansible4] => (item=Dockerfile)
+2020-04-07 15:56:05,337 p=2110 u=ansible n=ansible | ok: [ansible4] => (item=index.html)
+2020-04-07 15:56:05,365 p=2110 u=ansible n=ansible | TASK [Build image with Dockerfile] ************************************************************
+2020-04-07 15:56:11,902 p=2110 u=ansible n=ansible | [WARNING]: The "build" state has been deprecated for a long time and will be removed in
+Ansible 2.11. Please use "present", which has the same meaning as "build".
+
+2020-04-07 15:56:11,903 p=2110 u=ansible n=ansible | [WARNING]: Please specify build.path instead of path. The path option has been renamed and
+will be removed in Ansible 2.12.
+
+2020-04-07 15:56:11,903 p=2110 u=ansible n=ansible | [WARNING]: The value of the "source" option was determined to be "build". Please set the
+"source" option explicitly. Autodetection will be removed in Ansible 2.12.
+
+2020-04-07 15:56:11,903 p=2110 u=ansible n=ansible | [DEPRECATION WARNING]: Param 'path' is deprecated. See the module docs for more information. 
+This feature will be removed in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-04-07 15:56:11,903 p=2110 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 15:56:11,927 p=2110 u=ansible n=ansible | TASK [Runnig the container] *******************************************************************
+2020-04-07 15:56:13,469 p=2110 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 15:56:13,502 p=2110 u=ansible n=ansible | TASK [Check if container is running] **********************************************************
+2020-04-07 15:56:14,336 p=2110 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 15:56:14,341 p=2110 u=ansible n=ansible | PLAY RECAP ************************************************************************************
+2020-04-07 15:56:14,341 p=2110 u=ansible n=ansible | ansible4                   : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-04-07 17:20:07,755 p=2278 u=ansible n=ansible | PLAY [localpcs] *******************************************************************************
+2020-04-07 17:20:07,771 p=2278 u=ansible n=ansible | TASK [Gathering Facts] ************************************************************************
+2020-04-07 17:20:10,246 p=2278 u=ansible n=ansible | ok: [ansible4]
+2020-04-07 17:20:10,273 p=2278 u=ansible n=ansible | TASK [Copy Dockerfile to host node] ***********************************************************
+2020-04-07 17:20:11,768 p=2278 u=ansible n=ansible | changed: [ansible4] => (item=Dockerfile)
+2020-04-07 17:20:12,888 p=2278 u=ansible n=ansible | ok: [ansible4] => (item=index.html)
+2020-04-07 17:20:12,916 p=2278 u=ansible n=ansible | TASK [Build image with Dockerfile] ************************************************************
+2020-04-07 17:20:16,397 p=2278 u=ansible n=ansible | [WARNING]: The "build" state has been deprecated for a long time and will be removed in
+Ansible 2.11. Please use "present", which has the same meaning as "build".
+
+2020-04-07 17:20:16,398 p=2278 u=ansible n=ansible | [WARNING]: Please specify build.path instead of path. The path option has been renamed and
+will be removed in Ansible 2.12.
+
+2020-04-07 17:20:16,398 p=2278 u=ansible n=ansible | [WARNING]: The value of the "source" option was determined to be "build". Please set the
+"source" option explicitly. Autodetection will be removed in Ansible 2.12.
+
+2020-04-07 17:20:16,399 p=2278 u=ansible n=ansible | [DEPRECATION WARNING]: Param 'path' is deprecated. See the module docs for more information. 
+This feature will be removed in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-04-07 17:20:16,399 p=2278 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 17:20:16,423 p=2278 u=ansible n=ansible | TASK [Runnig the container] *******************************************************************
+2020-04-07 17:20:18,214 p=2278 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 17:20:18,242 p=2278 u=ansible n=ansible | TASK [Check if container is running] **********************************************************
+2020-04-07 17:20:19,110 p=2278 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 17:20:19,114 p=2278 u=ansible n=ansible | PLAY RECAP ************************************************************************************
+2020-04-07 17:20:19,114 p=2278 u=ansible n=ansible | ansible4                   : ok=5    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-04-07 17:34:48,108 p=2371 u=ansible n=ansible | PLAY [localpcs] *******************************************************************************
+2020-04-07 17:34:48,125 p=2371 u=ansible n=ansible | TASK [Gathering Facts] ************************************************************************
+2020-04-07 17:34:50,520 p=2371 u=ansible n=ansible | ok: [ansible4]
+2020-04-07 17:34:50,545 p=2371 u=ansible n=ansible | TASK [Copy Dockerfile to host node] ***********************************************************
+2020-04-07 17:34:51,962 p=2371 u=ansible n=ansible | ok: [ansible4] => (item=Dockerfile)
+2020-04-07 17:34:52,899 p=2371 u=ansible n=ansible | ok: [ansible4] => (item=index.html)
+2020-04-07 17:34:52,927 p=2371 u=ansible n=ansible | TASK [Build image with Dockerfile] ************************************************************
+2020-04-07 17:34:56,428 p=2371 u=ansible n=ansible | [WARNING]: The "build" state has been deprecated for a long time and will be removed in
+Ansible 2.11. Please use "present", which has the same meaning as "build".
+
+2020-04-07 17:34:56,429 p=2371 u=ansible n=ansible | [WARNING]: Please specify build.path instead of path. The path option has been renamed and
+will be removed in Ansible 2.12.
+
+2020-04-07 17:34:56,429 p=2371 u=ansible n=ansible | [WARNING]: The value of the "source" option was determined to be "build". Please set the
+"source" option explicitly. Autodetection will be removed in Ansible 2.12.
+
+2020-04-07 17:34:56,430 p=2371 u=ansible n=ansible | [DEPRECATION WARNING]: Param 'path' is deprecated. See the module docs for more information. 
+This feature will be removed in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-04-07 17:34:56,430 p=2371 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 17:34:56,453 p=2371 u=ansible n=ansible | TASK [Runnig the container] *******************************************************************
+2020-04-07 17:34:58,365 p=2371 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 17:34:58,393 p=2371 u=ansible n=ansible | TASK [Check if container is running] **********************************************************
+2020-04-07 17:34:59,250 p=2371 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 17:34:59,254 p=2371 u=ansible n=ansible | PLAY RECAP ************************************************************************************
+2020-04-07 17:34:59,255 p=2371 u=ansible n=ansible | ansible4                   : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-04-07 17:38:18,929 p=2450 u=ansible n=ansible | PLAY [localpcs] *******************************************************************************
+2020-04-07 17:38:18,945 p=2450 u=ansible n=ansible | TASK [Gathering Facts] ************************************************************************
+2020-04-07 17:38:21,077 p=2450 u=ansible n=ansible | ok: [ansible4]
+2020-04-07 17:38:21,100 p=2450 u=ansible n=ansible | TASK [Copy Dockerfile to host node] ***********************************************************
+2020-04-07 17:38:22,464 p=2450 u=ansible n=ansible | ok: [ansible4] => (item=Dockerfile)
+2020-04-07 17:38:23,354 p=2450 u=ansible n=ansible | ok: [ansible4] => (item=index.html)
+2020-04-07 17:38:23,382 p=2450 u=ansible n=ansible | TASK [Build image with Dockerfile] ************************************************************
+2020-04-07 17:38:26,716 p=2450 u=ansible n=ansible | [WARNING]: The "build" state has been deprecated for a long time and will be removed in
+Ansible 2.11. Please use "present", which has the same meaning as "build".
+
+2020-04-07 17:38:26,716 p=2450 u=ansible n=ansible | [WARNING]: Please specify build.path instead of path. The path option has been renamed and
+will be removed in Ansible 2.12.
+
+2020-04-07 17:38:26,717 p=2450 u=ansible n=ansible | [WARNING]: The value of the "source" option was determined to be "build". Please set the
+"source" option explicitly. Autodetection will be removed in Ansible 2.12.
+
+2020-04-07 17:38:26,717 p=2450 u=ansible n=ansible | [DEPRECATION WARNING]: Param 'path' is deprecated. See the module docs for more information. 
+This feature will be removed in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-04-07 17:38:26,717 p=2450 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 17:38:26,739 p=2450 u=ansible n=ansible | TASK [Runnig the container] *******************************************************************
+2020-04-07 17:38:28,579 p=2450 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 17:38:28,607 p=2450 u=ansible n=ansible | TASK [Check if container is running] **********************************************************
+2020-04-07 17:38:29,434 p=2450 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 17:38:29,438 p=2450 u=ansible n=ansible | PLAY RECAP ************************************************************************************
+2020-04-07 17:38:29,438 p=2450 u=ansible n=ansible | ansible4                   : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-04-07 17:43:34,725 p=2531 u=ansible n=ansible | PLAY [localpcs] *******************************************************************************
+2020-04-07 17:43:34,741 p=2531 u=ansible n=ansible | TASK [Gathering Facts] ************************************************************************
+2020-04-07 17:43:36,862 p=2531 u=ansible n=ansible | ok: [ansible4]
+2020-04-07 17:43:36,888 p=2531 u=ansible n=ansible | TASK [Copy Dockerfile to host node] ***********************************************************
+2020-04-07 17:43:38,239 p=2531 u=ansible n=ansible | ok: [ansible4] => (item=Dockerfile)
+2020-04-07 17:43:39,118 p=2531 u=ansible n=ansible | ok: [ansible4] => (item=index.html)
+2020-04-07 17:43:39,145 p=2531 u=ansible n=ansible | TASK [Build image with Dockerfile] ************************************************************
+2020-04-07 17:43:42,512 p=2531 u=ansible n=ansible | [WARNING]: The "build" state has been deprecated for a long time and will be removed in
+Ansible 2.11. Please use "present", which has the same meaning as "build".
+
+2020-04-07 17:43:42,513 p=2531 u=ansible n=ansible | [WARNING]: Please specify build.path instead of path. The path option has been renamed and
+will be removed in Ansible 2.12.
+
+2020-04-07 17:43:42,513 p=2531 u=ansible n=ansible | [WARNING]: The value of the "source" option was determined to be "build". Please set the
+"source" option explicitly. Autodetection will be removed in Ansible 2.12.
+
+2020-04-07 17:43:42,513 p=2531 u=ansible n=ansible | [DEPRECATION WARNING]: Param 'path' is deprecated. See the module docs for more information. 
+This feature will be removed in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-04-07 17:43:42,513 p=2531 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 17:43:42,537 p=2531 u=ansible n=ansible | TASK [Runnig the container] *******************************************************************
+2020-04-07 17:43:44,425 p=2531 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 17:43:44,453 p=2531 u=ansible n=ansible | TASK [Check if container is running] **********************************************************
+2020-04-07 17:43:45,284 p=2531 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 17:43:45,287 p=2531 u=ansible n=ansible | PLAY RECAP ************************************************************************************
+2020-04-07 17:43:45,287 p=2531 u=ansible n=ansible | ansible4                   : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-04-07 17:45:54,316 p=2653 u=ansible n=ansible | ERROR! the playbook: dockerfile.yml could not be found
+2020-04-07 17:46:00,501 p=2658 u=ansible n=ansible | PLAY [localpcs] *******************************************************************************
+2020-04-07 17:46:00,516 p=2658 u=ansible n=ansible | TASK [Gathering Facts] ************************************************************************
+2020-04-07 17:46:02,669 p=2658 u=ansible n=ansible | ok: [ansible4]
+2020-04-07 17:46:02,699 p=2658 u=ansible n=ansible | TASK [Copy Dockerfile to host node] ***********************************************************
+2020-04-07 17:46:04,075 p=2658 u=ansible n=ansible | ok: [ansible4] => (item=Dockerfile)
+2020-04-07 17:46:04,966 p=2658 u=ansible n=ansible | ok: [ansible4] => (item=index.html)
+2020-04-07 17:46:04,995 p=2658 u=ansible n=ansible | TASK [Build image with Dockerfile] ************************************************************
+2020-04-07 17:46:05,987 p=2658 u=ansible n=ansible | [WARNING]: The "build" state has been deprecated for a long time and will be removed in
+Ansible 2.11. Please use "present", which has the same meaning as "build".
+
+2020-04-07 17:46:05,987 p=2658 u=ansible n=ansible | [WARNING]: Please specify build.path instead of path. The path option has been renamed and
+will be removed in Ansible 2.12.
+
+2020-04-07 17:46:05,987 p=2658 u=ansible n=ansible | [WARNING]: The value of the "source" option was determined to be "build". Please set the
+"source" option explicitly. Autodetection will be removed in Ansible 2.12.
+
+2020-04-07 17:46:05,988 p=2658 u=ansible n=ansible | [DEPRECATION WARNING]: Param 'path' is deprecated. See the module docs for more information. 
+This feature will be removed in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2020-04-07 17:46:05,988 p=2658 u=ansible n=ansible | ok: [ansible4]
+2020-04-07 17:46:06,015 p=2658 u=ansible n=ansible | TASK [Runnig the container] *******************************************************************
+2020-04-07 17:46:07,105 p=2658 u=ansible n=ansible | ok: [ansible4]
+2020-04-07 17:46:07,135 p=2658 u=ansible n=ansible | TASK [Check if container is running] **********************************************************
+2020-04-07 17:46:07,950 p=2658 u=ansible n=ansible | changed: [ansible4]
+2020-04-07 17:46:07,953 p=2658 u=ansible n=ansible | PLAY RECAP ************************************************************************************
+2020-04-07 17:46:07,954 p=2658 u=ansible n=ansible | ansible4                   : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

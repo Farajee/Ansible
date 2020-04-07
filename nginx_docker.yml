@@ -1,0 +1,28 @@
+---
+- hosts: localpcs
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Copy Dockerfile to host node
+      copy: 
+        src: "{{ item }}"
+        dest: /tmp/
+      loop:  
+        - Dockerfile
+        - index.html  
+   
+    - name: Build image with Dockerfile
+      docker_image:
+         name: webserver
+         path: /tmp/
+         state: build
+
+    - name: Runnig the container
+      docker_container: 
+        name: nginx_webserver
+        image: webserver
+        state: started
+        ports: "80:80"
+    
+    - name: Check if container is running
+      shell: docker ps     
